@@ -9,7 +9,6 @@ Group:		X11/Applications/Multimedia
 Source0:	http://www.enseirb.fr/~bavoil/mozplugger/mozplugger-%{version}.tar.gz
 Source1:	%{name}-npunix.c
 Patch0:		%{name}-instance.patch
-Patch1:		%{name}-pluggerrc.patch
 URL:		http://fredrik.hubbe.net/plugger.html
 BuildRequires:	mozilla-embedded-devel
 PreReq:		mozilla-embedded
@@ -35,7 +34,6 @@ Plugin para o Netscape para streaming.
 %prep
 %setup -q -n mozplugger-%{version}
 %patch0 -p1
-#%patch1 -p1
 mkdir common
 cp -f %{SOURCE1} common/npunix.c
 
