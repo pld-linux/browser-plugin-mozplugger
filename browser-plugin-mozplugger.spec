@@ -3,7 +3,7 @@ Summary(pl):	Wtyczka Mozilli do multimediów
 Summary(pt_BR):	Plugin para o Netscape para streaming
 Name:		mozilla-plugin-mozplugger
 Version:	1.6.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://mozdev.mirrors.nyphp.org/mozplugger/mozplugger-%{version}.tar.gz
@@ -41,7 +41,7 @@ CF="$CF -I%{_includedir}/mozilla/java -I/usr/include/nspr -I%{_includedir}/mozil
 %{__make} all \
         XCFLAGS="$CF" NORM_CFLAGS="$CF" \
         XLDFLAGS=-shared \
-	LDFLAGS="%{rpmldflags} -L/usr/X11R6/lib" \
+	LDFLAGS="%{rpmldflags} -L/usr/X11R6/%{_lib}" \
         CC=%{__cc} LD=%{__cc} \
         SDK=. X11=%{_prefix}
 
