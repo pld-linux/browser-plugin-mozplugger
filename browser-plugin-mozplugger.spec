@@ -2,15 +2,15 @@ Summary:	Mozilla multimedia plugin
 Summary(pl):	Wtyczka Mozilli do multimediów
 Summary(pt_BR):	Plugin para o Netscape para streaming
 Name:		mozilla-plugin-mozplugger
-Version:	1.5.1
+Version:	1.6.0
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://mozdev.mirrors.nyphp.org/mozplugger/mozplugger-%{version}.tar.gz
-# Source0-md5:	b39304e6ec899209dc155b8d9bb89dc0
-Source1:	%{name}-npunix.c
+# Source0-md5:	bfd3fd0524029331d36ac62969c1f560
 URL:		http://mozplugger.mozdev.org/
 BuildRequires:	mozilla-embedded-devel
+Requires:	m4
 PreReq:		mozilla-embedded
 Obsoletes:	mozilla-plugin-plugger
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -33,8 +33,6 @@ Plugin para o Netscape para streaming.
 
 %prep
 %setup -q -n mozplugger-%{version}
-mkdir common
-cp -f %{SOURCE1} common/npunix.c
 bunzip2 mozplugger.7.bz2
 
 %build
@@ -63,7 +61,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
+%doc ChangeLog README
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/mozilla/plugins/*.so
 %{_mandir}/*/*
