@@ -1,0 +1,12 @@
+diff -urN mozplugger-1.0.org/mozplugger.c mozplugger-1.0/mozplugger.c
+--- mozplugger-1.0.org/mozplugger.c	Tue Feb 11 20:21:17 2003
++++ mozplugger-1.0/mozplugger.c	Tue Feb 11 20:21:43 2003
+@@ -574,7 +574,7 @@
+ }
+ 
+ /* Let netscape know things about mozplugger */
+-NPError NPP_GetValue(void *future, NPPVariable variable, void *value)
++NPError NPP_GetValue(NPP instance, NPPVariable variable, void *value)
+ {
+   NPError err = NPERR_NO_ERROR;
+ 
