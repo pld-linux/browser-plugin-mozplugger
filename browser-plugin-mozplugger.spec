@@ -7,6 +7,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://www.enseirb.fr/~bavoil/mozplugger/mozplugger-%{version}.tar.gz
+# Source0-md5:	6423364d466d0c6d20f195492c91cecd
 Source1:	%{name}-npunix.c
 Patch0:		%{name}-instance.patch
 URL:		http://fredrik.hubbe.net/plugger.html
