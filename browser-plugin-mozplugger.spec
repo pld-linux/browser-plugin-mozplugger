@@ -2,12 +2,12 @@ Summary:	Mozilla multimedia plugin
 Summary(pl):	Wtyczka Mozilli do multimediów
 Summary(pt_BR):	Plugin para o Netscape para streaming
 Name:		mozilla-plugin-mozplugger
-Version:	1.7.1
+Version:	1.7.2
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
-Source0:	http://mozdev.mirrors.nyphp.org/mozplugger/mozplugger-%{version}.tar.gz
-# Source0-md5:	a81e4395a6874d61cbfc184f04f1632b
+Source0:	http://mozplugger.mozdev.org/files/mozplugger-%{version}.tar.gz
+# Source0-md5:	d9a4919caf36dbf1fb66b3a034d64cd2
 URL:		http://mozplugger.mozdev.org/
 BuildRequires:	mozilla-embedded-devel
 Requires:	m4
