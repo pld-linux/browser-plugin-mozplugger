@@ -12,7 +12,7 @@ URL:		http://mozplugger.mozdev.org/
 BuildRequires:	XFree86-devel
 BuildRequires:	mozilla-embedded-devel
 Requires:	m4
-PreReq:		mozilla-embedded
+Requires:	mozilla-embedded
 Obsoletes:	mozilla-plugin-plugger
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -66,5 +66,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/mozilla/plugins/*.so
 %{_mandir}/*/*
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/mozpluggerrc
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/mozpluggerrc
 %{_sysconfdir}/mozpluggerrc-*
