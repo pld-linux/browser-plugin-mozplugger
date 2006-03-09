@@ -43,7 +43,7 @@ CF="$CF -I%{_includedir}/mozilla/java -I/usr/include/nspr -I%{_includedir}/mozil
         XCFLAGS="$CF" NORM_CFLAGS="$CF" \
         XLDFLAGS=-shared \
 	LDFLAGS="%{rpmldflags} -L/usr/X11R6/%{_lib}" \
-        CC=%{__cc} LD=%{__cc} \
+        CC="%{__cc}" LD="%{__cc}" \
         SDK=. X11=%{_prefix}
 
 %install
