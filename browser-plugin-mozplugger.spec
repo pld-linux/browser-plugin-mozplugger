@@ -2,15 +2,15 @@ Summary:	Mozilla multimedia plugin
 Summary(pl.UTF-8):	Wtyczka Mozilli do multimediów
 Summary(pt_BR.UTF-8):	Plugin para o Netscape para streaming
 Name:		browser-plugin-mozplugger
-Version:	1.14.3
+Version:	2.1.6
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://mozplugger.mozdev.org/files/mozplugger-%{version}.tar.gz
-# Source0-md5:	ac2f916ac93c3b59dec2ebfc511d00a0
+# Source0-md5:	abb42f3c3c2f3a940c1252a83f254116
 Patch0:		DESTDIR.patch
 URL:		http://mozplugger.mozdev.org/
-BuildRequires:	xulrunner-devel
+BuildRequires:	iceweasel-libs
 Requires:	m4
 Obsoletes:	mozilla-plugin-mozplugger
 Obsoletes:	mozilla-plugin-plugger
@@ -64,4 +64,3 @@ fi
 %attr(755,root,root) %{_browserpluginsdir}/*.so
 %{_mandir}/*/*
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/mozpluggerrc
-%{_sysconfdir}/mozpluggerrc

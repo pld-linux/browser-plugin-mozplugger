@@ -1,30 +1,31 @@
---- mozplugger-1.14.3/Makefile.in.old	2011-04-29 14:23:26.000000000 +0200
-+++ mozplugger-1.14.3/Makefile.in	2011-04-29 14:26:56.000000000 +0200
-@@ -152,17 +152,17 @@ localinstall_opera:
+--- mozplugger-2.1.6/Makefile.in.old	2015-02-11 13:12:28.790025563 +0100
++++ mozplugger-2.1.6/Makefile.in	2015-02-11 13:13:44.313362647 +0100
+@@ -267,17 +267,17 @@
  	make localinstall BROWSERDIR=.opera
  
  install:
--	-@$(MKDIR) @bindir@
--	-@$(MKDIR) $(prefix)$(libprefix)/mozilla/plugins
--	-@$(MKDIR) @mandir@/man7
--	-@$(MKDIR) @sysconfdir@
--	cp mozplugger-helper     @bindir@
--	cp mozplugger-controller @bindir@
--	cp mozplugger-linker     @bindir@
--	for target in ${PLUGINDIRS}; do cp mozplugger.so $${target}; done
-+	-@$(MKDIR) $(DESTDIR)@bindir@
-+	-@$(MKDIR) $(DESTDIR)${PLUGINDIRS}
-+	-@$(MKDIR) $(DESTDIR)@mandir@/man7
-+	-@$(MKDIR) $(DESTDIR)@sysconfdir@
-+	cp mozplugger-helper     $(DESTDIR)@bindir@
-+	cp mozplugger-controller $(DESTDIR)@bindir@
-+	cp mozplugger-linker     $(DESTDIR)@bindir@
-+	for target in ${PLUGINDIRS}; do cp mozplugger.so $(DESTDIR)$${target}; done
- #	cp mozplugger.so $(prefix)$(libprefix)/mozilla/plugins/
--	cp $(srcdir)/mozpluggerrc  @sysconfdir@
--	cp $(srcdir)/mozplugger.7  @mandir@/man7/
-+	cp $(srcdir)/mozpluggerrc  $(DESTDIR)@sysconfdir@
-+	cp $(srcdir)/mozplugger.7  $(DESTDIR)@mandir@/man7/
+-	-install -d @bindir@
+-	install mozplugger-helper @bindir@
+-	install mozplugger-controller @bindir@
+-	install mozplugger-linker @bindir@
+-	install mozplugger-update @bindir@
+-	-for a in ${PLUGINDIRS}; do install -d $$a ; done
+-	for a in ${PLUGINDIRS}; do install mozplugger.so $$a ; done
+-	-install -d @sysconfdir@
+-	install $(srcdir)/mozpluggerrc @sysconfdir@
+-	-install -d @mandir@/man7
+-	install $(srcdir)/mozplugger.7 @mandir@/man7/
++	-install -d $(DESTDIR)@bindir@
++	install mozplugger-helper $(DESTDIR)@bindir@
++	install mozplugger-controller $(DESTDIR)@bindir@
++	install mozplugger-linker $(DESTDIR)@bindir@
++	install mozplugger-update $(DESTDIR)@bindir@
++	-for a in ${PLUGINDIRS}; do install -d $(DESTDIR)$$a ; done
++	for a in ${PLUGINDIRS}; do install mozplugger.so $(DESTDIR)$$a ; done
++	-install -d $(DESTDIR)@sysconfdir@
++	install $(srcdir)/mozpluggerrc $(DESTDIR)@sysconfdir@
++	-install -d $(DESTDIR)@mandir@/man7
++	install $(srcdir)/mozplugger.7 $(DESTDIR)@mandir@/man7/
  
- mozplugger.tar.gz: $(SOURCE_FILES)
- 	@( DIR=`pwd`;\
+ uninstall:
+ 	-rm -f @sysconfdir@/mozpluggerrc
